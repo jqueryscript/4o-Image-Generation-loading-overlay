@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4o Image Generation Image Revealing Effect</title>
+<style>
+    body {
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    background-color: #f0f0f0;
+}
+
+.image-container {
+    position: relative; /* Needed for absolute positioning of the overlay */
+    width: 960px;      /* Or your desired width */
+    max-width: 90%;    /* Make it responsive */
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio - adjust as needed */
+    overflow: hidden;  /* Crucial: hides the overlay as it moves out */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Optional: styling */
+}
+
+.image-container img {
+    display: block;    /* Avoids mystery space below image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers container, may crop */
+}
+
+.blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Light overlay, adjust opacity */
+
+    /* The core blur effect */
+    /* Note: Check browser compatibility for backdrop-filter */
+    backdrop-filter: blur(20px);
+    /* You might still need the -webkit- prefix for older Safari */
+    /* -webkit-backdrop-filter: blur(20px); */
+
+    /* The soft edge reveal using a mask */
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%, /* Top is fully masked (invisible) */
+        black 25%       /* Becomes fully opaque (visible) below 25% */
+    );
+    /* Prefix for compatibility */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 25%
+    );
+
+    /* Animation settings */
+    /* Adjust duration and easing function here */
+    transition: transform 8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+
+    /* Initial position: overlay covers the image */
+    transform: translateY(0%);
+}
+
+/* The state when the image is 'loaded' */
+.image-container.loaded .blur-overlay {
+    /* Move the overlay down out of view */
+    transform: translateY(100%);
+}
+</style>
+</head>
+<body>
+
+<h1>4o Image Generation Image Revealing Effect</h1><style>
+.download{ padding: 1.25rem; border:0; border-radius:3px; background-color:#4F46E5; color:#fff;cursor:pointer; text-decoration:none;}.download:hover{color: #fff}#carbonads{display:block;overflow:hidden;max-width:728px;position:relative;font-size:22px;box-sizing:content-box}#carbonads>span{display:block}#carbonads a{color:#4F46E5;text-decoration:none}#carbonads a:hover{color:#4F46E5}.carbon-wrap{display:flex;align-items:center}.carbon-img{display:block;margin:0;line-height:1}.carbon-img img{display:block;height:90px;width:auto}.carbon-text{display:block;padding:0 1em;line-height:1.35;text-align:left}.carbon-poweredby{display:block;position:absolute;bottom:0;right:0;padding:6px 10px;text-align:center;text-transform:uppercase;letter-spacing:.5px;font-weight:600;font-size:8px;border-top-left-radius:4px;line-height:1;color:#aaa!important}@media only screen and (min-width:320px) and (max-width:759px){.carbon-text{font-size:14px}}
+</style>
+<div><div id="carbon-block"></div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783044520727903"
+     crossorigin="anonymous"></script>
+<!-- CSS_Replace_Demo -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2783044520727903"
+     data-ad-slot="3576734658"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p style="margin:2rem auto"><a class="download" href="https://www.cssscript.com/4o-image-generation-reveal">Download</a> <a class="download" href="https://www.cssscript.com/">Back To CSSScript.Com</a></p>
+<p>Create a ChatGPT-4o image generation inspired frosted glass image loading/revealing effect using pure CSS.</p>
+<div class="image-container">
+    <!-- Your target image -->
+    <img src="https://www.jqueryscript.net/dummy/1.jpg" alt="Image Alt">
+   <!-- The frosted glass overlay -->
+    <div class="blur-overlay"></div>
+</div>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const imageContainer = document.querySelector('.image-container');
+
+
+        setTimeout(() => {
+            imageContainer.classList.add('loaded');
+        }, 1500);
+    });
+</script>
+<script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CE7DC2JW&placement=wwwcssscriptcom";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLWL5N9CSM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LLWL5N9CSM');
+</script>
+</body>
+</html>
